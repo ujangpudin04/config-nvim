@@ -25,6 +25,11 @@ return {
           auto_focus = false,
         },
         test_executor = "neotest",
+        inlay_hints = {
+          auto = true,
+          only_current_line = true, -- Tampilkan hanya di current line
+          show_parameter_hints = true,
+        },
       },
 
       server = {
@@ -62,6 +67,7 @@ return {
               buildScripts = {
                 enable = true,
               },
+              targetDir = "target/rust-analyzer",
             },
 
             completion = {
@@ -78,6 +84,10 @@ return {
 
             diagnostics = {
               enable = true,
+              disabled = { "unresolved-proc-macro" },
+              enableExperimental = true,
+              warningsAsInfo = {},
+              warningsAsHint = {},
             },
           },
         },
