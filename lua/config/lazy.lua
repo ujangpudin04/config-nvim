@@ -21,21 +21,20 @@ vim.g.maplocalleader = "/"
 
 require("lazy").setup({
   spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
+      colorscheme = "catppuccin",
+    } },
     { import = "plugins" },
   },
   defaults = {
     lazy = true,
-    version = false, 
+    version = false,
   },
-  install = { colorscheme = { "catppuccin" } },
   checker = {
-    enabled = true, 
-    notify = false, 
-  }, 
+    enabled = true,
+  },
   performance = {
     rtp = {
-      
       disabled_plugins = {
         "gzip",
         "tarPlugin",
@@ -48,5 +47,3 @@ require("lazy").setup({
 })
 
 require("config.keymaps")
-
-

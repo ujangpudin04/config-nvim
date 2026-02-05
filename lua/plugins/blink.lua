@@ -1,14 +1,28 @@
 return {
   "saghen/blink.cmp",
   event = "InsertEnter",
-
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+  },
   opts = {
 
     sources = {
       default = { "lsp", "snippets", "path", "buffer" },
+      providers = {
+        snippets = {
+          min_keyword_length = 2,
+          score_offset = -1, -- Sedikit menurunkan prioritas snippets
+        },
+        buffer = {
+          min_keyword_length = 3,
+          max_items = 5,
+        },
+      },
     },
 
     appearance = {
+      use_nvim_cmp_as_default = false,
+      nerd_font_variant = "mono",
       kind_icons = {
         Text = "󰉿",
         Method = "󰆧",
@@ -24,7 +38,7 @@ return {
         Value = "󰎠",
         Enum = "",
         Keyword = "󰌋",
-        Snippet = "",
+        Snippet = "󰲋",
         Color = "󰏘",
         File = "󰈙",
         Reference = "󰈇",
@@ -37,18 +51,18 @@ return {
         TypeParameter = "󰊄",
       },
     },
-
     keymap = {
       preset = "default",
 
-      ["<Tab>"] = { "select_next", "fallback" },
-      ["<S-Tab>"] = { "select_prev", "fallback" },
-
+      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       ["<CR>"] = { "accept", "fallback" },
-
-      ["<C-e>"] = { "hide" },
-      ["<C-n>"] = { "select_next" },
-      ["<C-p>"] = { "select_prev" },
+      ["<C-e>"] = { "hide", "fallback" },
+      ["<C-n>"] = { "select_next", "fallback" },
+      ["<C-p>"] = { "select_prev", "fallback" },
+      ["<C-space>"] = { "show", "fallback" },
+      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
     },
 
     completion = {

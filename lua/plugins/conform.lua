@@ -5,9 +5,12 @@ return {
       lua = { "stylua" },
       go = { "gofumpt", "goimports" },
       rust = { "rustfmt" },
+
       javascript = { "prettier" },
+      javascriptreact = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+
       json = { "prettier" },
       html = { "prettier" },
       css = { "prettier" },

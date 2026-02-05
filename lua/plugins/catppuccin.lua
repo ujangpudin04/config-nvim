@@ -1,5 +1,6 @@
 return {
   "catppuccin/nvim",
+  priority = 1000,
   lazy = false,
   config = function()
     require("catppuccin").setup({
@@ -61,7 +62,7 @@ return {
       default_integrations = true,
       auto_integrations = false,
       integrations = {
-        blink_cmp = true,
+        blink_cmp = { enabled = true },
         gitsigns = true,
         nvimtree = true,
         notify = false,
