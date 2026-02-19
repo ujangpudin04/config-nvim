@@ -1,3 +1,3 @@
-
-require("config.lazy")
-require("config.options")
+require("ujang.core")
+require("ujang.lazy")
+require("ujang.lsp")
