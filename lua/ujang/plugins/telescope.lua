@@ -26,6 +26,10 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "smart" },
+        file_ignore_patterns = {
+          "node_modules/",
+          "%.git/", -- opsional, ignore .git juga
+        },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
