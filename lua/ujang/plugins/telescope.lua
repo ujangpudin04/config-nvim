@@ -1,6 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
+  pin = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -9,6 +10,10 @@ return {
     "folke/trouble.nvim", -- Tambahkan dependency
   },
   config = function()
+    vim.treesitter.highlighter.is_enabled = function(bufnr)
+      return vim.treesitter.highlighter.active[bufnr] ~= nil
+    end
+
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local transform_mod = require("telescope.actions.mt").transform_mod
@@ -25,10 +30,13 @@ return {
 
     telescope.setup({
       defaults = {
+        preview = {
+          treesitter = false,
+        },
         path_display = { "smart" },
         file_ignore_patterns = {
           "node_modules/",
-          "%.git/", -- opsional, ignore .git juga
+          "%.git/",
         },
         mappings = {
           i = {

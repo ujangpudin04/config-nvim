@@ -14,8 +14,8 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-        "eslint",
-        "rust_analyzer",
+        -- "eslint",
+        -- "rust_analyzer",
         "gopls",
       },
     },
@@ -44,7 +44,7 @@ return {
         "isort", -- python formatter
         "black", -- python formatter
         "pylint",
-        "eslint_d",
+        -- "eslint_d",
         "rustfmt",
         "gofumpt", -- go formatter (lebih strict dari gofmt)
         "goimports", -- otomatis manage imports

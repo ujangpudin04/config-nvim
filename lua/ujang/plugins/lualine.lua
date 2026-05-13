@@ -55,6 +55,17 @@ return {
         theme = my_lualine_theme,
       },
       sections = {
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+            symbols = {
+              modified = " ●",
+              readonly = " 🔒",
+              unnamed = "[No Name]",
+            },
+          },
+        },
         lualine_x = {
           {
             lazy_status.updates,
