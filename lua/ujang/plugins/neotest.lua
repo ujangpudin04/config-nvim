@@ -13,12 +13,18 @@ return {
     },
     config = function()
       local neotest = require("neotest")
+      vim.g.neotest_rust = {
+        timeout = 15000,
+      }
 
       neotest.setup({
         adapters = {
           -- Rust: pakai `cargo test` di balik layar
           require("neotest-rust")({
-            args = { "--no-capture" }, -- lihat stdout saat test
+            args = { "--nocapture" }, -- lihat stdout saat test
+            runner = "cargo",
+            dap_adapter = "codelldb",
+            timeout = 15000,
           }),
 
           -- Go: pakai `go test` di balik layar
@@ -55,6 +61,10 @@ return {
           enabled = true,
           virtual_text = true,
           signs = true,
+        },
+
+        discovery = {
+          enabled = false,
         },
       })
 

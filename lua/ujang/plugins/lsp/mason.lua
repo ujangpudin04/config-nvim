@@ -45,7 +45,7 @@ return {
         "black", -- python formatter
         "pylint",
         -- "eslint_d",
-        "rustfmt",
+        -- "rustfmt",
         "gofumpt", -- go formatter (lebih strict dari gofmt)
         "goimports", -- otomatis manage imports
         "golangci-lint", -- go linter
