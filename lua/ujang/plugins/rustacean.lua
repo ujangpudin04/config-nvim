@@ -33,6 +33,13 @@ return {
       },
 
       server = {
+        cmd = function()
+          local stable_ra = vim.fn.expand("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
+          if vim.fn.executable(stable_ra) == 1 then
+            return { stable_ra }
+          end
+          return { "rust-analyzer" }
+        end,
         on_attach = function(_, bufnr)
           local opts = { buffer = bufnr, silent = true }
 

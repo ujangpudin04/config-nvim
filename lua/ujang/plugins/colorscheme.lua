@@ -104,6 +104,20 @@ return {
         hl["DiagnosticInfo"] = { fg = colors.cyan }
         hl["DiagnosticHint"] = { fg = colors.teal }
 
+        -- JSX component names (identifier dalam jsx context)
+        hl["@tag"] = { fg = "#FF8F40" } -- <div>, <span>
+        hl["@tag.jsx"] = { fg = "#FF8F40" }
+        hl["@tag.builtin.tsx"] = { fg = "#5CCFE6" }
+        hl["@tag.attribute"] = { fg = "#FFD580" }
+        hl["@tag.attribute.tsx"] = { fg = "#FFD580" }
+        hl["@tag.delimiter"] = { fg = "#5C6773" }
+        hl["@tag.delimiter.tsx"] = { fg = "#5C6773" }
+
+        -- Ini yang kemungkinan dipakai untuk Typography, Box, dll
+        hl["@constructor.tsx"] = { fg = "#5CCFE6" }
+        hl["@constructor.jsx"] = { fg = "#5CCFE6" }
+
+        -- LspInlayHint
         hl["LspInlayHint"] = { fg = "#C8A96E", italic = true }
       end,
     })
